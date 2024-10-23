@@ -3,28 +3,27 @@ import { getUsers } from '@/apis/getUsers'
 import { QUERY_KEY } from '@/constants/queryKey'
 import { UserType } from '@/types/user'
 
-export const useGetUsers = (search: string) => {
-  const { data, fetchNextPage, hasNextPage, isLoading, isFetching, isError } =
+export const useGetUsers = (searchText: string) => {
+  const { data, fetchNextPage, hasNextPage, isFetching, error } =
     useInfiniteQuery({
-      queryKey: [QUERY_KEY.GITHUB_USERS, search],
-      queryFn: ({ pageParam = 1 }) => getUsers(search, pageParam),
+      queryKey: [QUERY_KEY.GITHUB_USERS, searchText],
+      queryFn: ({ pageParam = 1 }) => getUsers(searchText, pageParam),
       initialPageParam: 1,
       getNextPageParam: (lastPage, allPages) => {
         const nextPage = allPages.length + 1
         return lastPage.items.length === 20 ? nextPage : undefined
       },
-      enabled: !!search,
+      enabled: !!searchText,
     })
   const users: UserType[] = data?.pages.flatMap((page) => page.items) ?? []
-  const isEmpty = users.length === 0 && !isLoading && !isError
+  const isEmpty = users.length === 0 && !isFetching && !error
 
   return {
     users,
     fetchNextPage,
     hasNextPage,
-    isLoading,
     isFetching,
-    isError,
+    error,
     isEmpty,
   }
 }

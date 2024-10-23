@@ -15,8 +15,8 @@ const SearchContainer = () => {
   return (
     <div className={styles.container}>
       <SearchBar searchText={searchText} onSearch={handleSearch} />
-      <div className={styles.wrap}>
-        <h2 className={styles.wrapTitle}>검색 결과</h2>
+      <div>
+        <h2 className={styles.title}>검색 결과</h2>
         <UserList searchText={debouncedSearchText} />
       </div>
     </div>
