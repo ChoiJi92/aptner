@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+}
+
+.userImage {
+  border-radius: 50%;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.userName {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.profileLink {
+  font-size: 14px;
+  color: var(--gray);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.bookmarkButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
