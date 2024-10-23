@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 20px;
+
+  & h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
