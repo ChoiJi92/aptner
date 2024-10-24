@@ -1,0 +1,48 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+
+  input {
+    width: 100%;
+    padding: 10px 35px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    height: 30px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.searchIconWrap {
+  position: absolute;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.clearButton {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--gray);
+
+  &:hover {
+    color: var(--black);
+  }
+}
