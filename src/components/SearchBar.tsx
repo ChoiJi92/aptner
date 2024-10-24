@@ -1,5 +1,5 @@
-import SearchIcon from './icons/SearchIcon'
-import CloseIcon from './icons/CloseIcon'
+import SearchIcon from '../shared/icons/SearchIcon'
+import CloseIcon from '../shared/icons/CloseIcon'
 import styles from './SearchBar.module.scss'
 
 interface SearchBarProps {

@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './Header.module.scss'
-import SearchIcon from './icons/SearchIcon'
-import BookmarkIcon from './icons/BookmarkIcon'
+import SearchIcon from '../shared/icons/SearchIcon'
+import BookmarkIcon from '../shared/icons/BookmarkIcon'
 
 const Header = () => {
   const pathname = usePathname()
