@@ -17,7 +17,14 @@ const useUserStore = create(
       bookmarkedUsers: [],
       addBookmark: (user) =>
         set((state) => ({
-          bookmarkedUsers: [...state.bookmarkedUsers, user],
+          bookmarkedUsers: [
+            ...state.bookmarkedUsers,
+            {
+              id: user.id,
+              login: user.login,
+              avatar_url: user.avatar_url,
+            },
+          ],
         })),
       removeBookmark: (userId) =>
         set((state) => ({
