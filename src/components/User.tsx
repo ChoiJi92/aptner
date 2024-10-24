@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from './User.module.scss'
 import { UserType } from '@/types/user'
 import useUserStore from '@/store/useUserStore'
-import BookmarkIcon from './icons/BookmarkIcon'
+import BookmarkIcon from '../shared/icons/BookmarkIcon'
 
 const User = ({
   user,
