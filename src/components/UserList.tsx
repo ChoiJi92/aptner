@@ -11,6 +11,7 @@ const UserList = ({ searchText }: { searchText: string }) => {
   const observerRef = useRef<IntersectionObserver | null>(null)
   const lastUserRef = useRef<HTMLDivElement | null>(null)
 
+  // 무한 스크롤 구현
   useEffect(() => {
     if (observerRef.current) {
       observerRef.current.disconnect()
@@ -36,10 +37,12 @@ const UserList = ({ searchText }: { searchText: string }) => {
     }
   }, [fetchNextPage, hasNextPage, isFetching])
 
+  // 에러시 에러메세지 표시
   if (error) {
     return <div>{error.message}</div>
   }
 
+  // 검색 결과가 없을 때 표시
   if (isEmpty) return <div>검색 결과가 없습니다.</div>
 
   return (

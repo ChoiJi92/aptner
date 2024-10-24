@@ -12,10 +12,12 @@ const Header = () => {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  // 모바일 메뉴 열기/닫기
   const handleMenuButton = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  // 네비게이션 링크 클릭 시 모바일 메뉴 닫기
   const handleNavLinkButton = () => {
     setIsMenuOpen(false)
   }

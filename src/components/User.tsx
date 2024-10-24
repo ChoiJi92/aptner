@@ -14,6 +14,7 @@ const User = ({
   const { isBookmarked, addBookmark, removeBookmark } = useUserStore()
   const bookMarked = isBookmarked(user.id)
 
+  // 북마크 추가 및 삭제
   const handleBookmark = () => {
     if (bookMarked) {
       removeBookmark(user.id)

@@ -6,6 +6,7 @@ import User from './User'
 const BookMarkUserList = () => {
   const { bookmarkedUsers } = useUserStore()
 
+  // 북마크한 사용자가 없을 경우 메시지 표시
   if (bookmarkedUsers.length === 0) {
     return <div>북마크한 사용자가 없습니다.</div>
   }
