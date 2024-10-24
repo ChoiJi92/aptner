@@ -14,9 +14,11 @@ export const useGetUsers = (searchText: string) => {
         return lastPage.items.length === 20 ? nextPage : undefined
       },
       enabled: !!searchText,
-      staleTime: 1000 * 60 * 5,
+      staleTime: 1000 * 60 * 5, // 5분간 캐싱
     })
+
   const users: UserType[] = data?.pages.flatMap((page) => page.items) ?? []
+
   const isEmpty = users.length === 0 && !isFetching && !error
 
   return {

@@ -16,7 +16,6 @@ GitHub API를 활용하여 사용자를 검색하고 북마크할 수 있는 웹
 - React Query
 - Zustand
 - SCSS
-- Axios
 
 ## 시작하기
 
