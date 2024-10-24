@@ -8,6 +8,7 @@ import { useDebounce } from '@/hooks/useDebounce'
 
 const SearchContainer = () => {
   const [searchText, setSearchText] = useState<string>('')
+  // 검색 성능 최적화를 위해 디바운스 적용 (500ms)
   const debouncedSearchText = useDebounce(searchText, 500)
 
   const handleSearch = (text: string) => {
