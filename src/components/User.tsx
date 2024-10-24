@@ -26,7 +26,7 @@ const User = ({
     <div className={styles.container}>
       <Image
         src={user.avatar_url}
-        alt={user.login}
+        alt={`${user.login} 프로필 이미지`}
         className={styles.userImage}
         width={50}
         height={50}
@@ -38,11 +38,16 @@ const User = ({
           target="_blank"
           rel="noopener noreferrer"
           className={styles.profileLink}
+          aria-label={`${user.login} 프로필 보기`}
         >
           View Profile
         </Link>
       </div>
-      <button onClick={handleBookmark} className={styles.bookmarkButton}>
+      <button
+        onClick={handleBookmark}
+        className={styles.bookmarkButton}
+        aria-label="북마크"
+      >
         <BookmarkIcon bookmarked={bookMarked} />
       </button>
     </div>

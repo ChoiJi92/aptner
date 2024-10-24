@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import SearchBar from './SearchBar'
 import styles from './SearchContainer.module.scss'
 import UserList from './UserList'
@@ -9,9 +9,10 @@ const SearchContainer = () => {
   const [searchText, setSearchText] = useState<string>('')
   const debouncedSearchText = useDebounce(searchText, 500)
 
-  const handleSearch = (text: string) => {
+  const handleSearch = useCallback((text: string) => {
     setSearchText(text)
-  }
+  }, [])
+
   return (
     <div className={styles.container}>
       <SearchBar searchText={searchText} onSearch={handleSearch} />

@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <h1>GitHub 사용자 검색</h1>
-      <nav className={styles.nav}>
+      <nav className={styles.nav} aria-label="네비게이션">
         <Link
           href="/"
           className={`${styles.navLink} ${pathname === '/' ? styles.active : ''}`}
