@@ -8,6 +8,7 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ searchText, onSearch }: SearchBarProps) => {
+  // 검색어 초기화
   const handleClear = () => {
     onSearch('')
   }

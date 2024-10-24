@@ -15,6 +15,7 @@ const useUserStore = create(
   persist<UserStore>(
     (set, get) => ({
       bookmarkedUsers: [],
+      // 북마크 추가
       addBookmark: (user) =>
         set((state) => ({
           bookmarkedUsers: [
@@ -26,12 +27,14 @@ const useUserStore = create(
             },
           ],
         })),
+      // 북마크 삭제
       removeBookmark: (userId) =>
         set((state) => ({
           bookmarkedUsers: state.bookmarkedUsers.filter(
             (user) => user.id !== userId,
           ),
         })),
+      // 북마크 여부 확인
       isBookmarked: (userId) =>
         get().bookmarkedUsers.some((user) => user.id === userId),
     }),
