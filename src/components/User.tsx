@@ -3,12 +3,25 @@ import Image from 'next/image'
 
 import styles from './User.module.scss'
 import { UserType } from '@/types/user'
+import useUserStore from '@/store/useUserStore'
+import BookmarkIcon from './icons/BookmarkIcon'
 
 const User = ({
   user,
 }: {
   user: Pick<UserType, 'id' | 'login' | 'avatar_url'>
 }) => {
+  const { isBookmarked, addBookmark, removeBookmark } = useUserStore()
+  const bookMarked = isBookmarked(user.id)
+
+  const handleBookmark = () => {
+    if (bookMarked) {
+      removeBookmark(user.id)
+    } else {
+      addBookmark(user)
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Image
@@ -29,8 +42,8 @@ const User = ({
           View Profile
         </Link>
       </div>
-      <button onClick={() => {}} className={styles.bookmarkButton}>
-        북마크
+      <button onClick={handleBookmark} className={styles.bookmarkButton}>
+        <BookmarkIcon bookmarked={bookMarked} />
       </button>
     </div>
   )

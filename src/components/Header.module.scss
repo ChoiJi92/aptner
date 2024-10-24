@@ -1,25 +1,15 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 
   h1 {
     font-size: 24px;
     font-weight: bold;
-  }
-
-  a {
-    text-decoration: none;
   }
 }
 
@@ -32,16 +22,26 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
-  border: 1px solid var(--black);
-  border-radius: 6px;
   text-decoration: none;
   color: var(--black);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--black);
   font-size: 14px;
   transition: all 0.2s ease;
 
   &:hover {
     background-color: var(--black);
     color: var(--white);
+  }
+
+  &.active {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
   }
 }
