@@ -13,18 +13,24 @@ const SearchBar = ({ searchText, onSearch }: SearchBarProps) => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="search">
       <div className={styles.searchIconWrap}>
         <SearchIcon />
       </div>
       <input
         type="text"
+        role="searchbox"
         value={searchText}
         onChange={(e) => onSearch(e.target.value)}
         placeholder="GitHub 사용자 검색"
+        aria-label="GitHub 사용자 검색"
       />
       {searchText && (
-        <button onClick={handleClear} className={styles.clearButton}>
+        <button
+          onClick={handleClear}
+          className={styles.clearButton}
+          aria-label="검색어 초기화"
+        >
           <CloseIcon />
         </button>
       )}
